@@ -1,4 +1,4 @@
-import { Instagram, Linkedin, Globe } from "lucide-react";
+import { Instagram, Linkedin } from "lucide-react";
 
 const Footer = () => (
   <footer className="bg-charcoal text-offwhite py-10 border-t border-offwhite/5">
@@ -13,9 +13,22 @@ const Footer = () => (
           Advocacia editorial e estratégica para negócios digitais. Unindo segurança jurídica e visão de negócio.
         </p>
         <div className="flex items-center gap-4 pt-2">
-          <a href="#" className="text-offwhite/40 hover:text-gold transition-colors"><Instagram size={18} /></a>
-          <a href="#" className="text-offwhite/40 hover:text-gold transition-colors"><Linkedin size={18} /></a>
-          <a href="#" className="text-offwhite/40 hover:text-gold transition-colors"><Globe size={18} /></a>
+          <a 
+            href="https://www.instagram.com/mariapaulalino_adv/" 
+            target="_blank" 
+            rel="noreferrer" 
+            className="text-offwhite/40 hover:text-gold transition-colors"
+          >
+            <Instagram size={18} />
+          </a>
+          <a 
+            href="https://www.linkedin.com/in/maria-paula-lino-182ab329b/" 
+            target="_blank" 
+            rel="noreferrer" 
+            className="text-offwhite/40 hover:text-gold transition-colors"
+          >
+            <Linkedin size={18} />
+          </a>
         </div>
       </div>
 
