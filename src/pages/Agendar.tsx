@@ -9,11 +9,16 @@ import FloatingWhatsApp from "@/components/site/FloatingWhatsApp";
 const HOURS = [9, 10, 11, 14, 15, 16, 17];
 
 const schema = z.object({
-  name: z.string().trim().min(2).max(100),
-  email: z.string().trim().email().max(255),
-  whatsapp: z.string().trim().min(8).max(25),
-  area: z.string().trim().min(1).max(80),
-  message: z.string().trim().max(1000).optional(),
+  name: z.string().trim().min(2, "Informe seu nome").max(100),
+  filling_as: z.string().min(1, "Selecione uma opção"),
+  company_name: z.string().trim().optional(),
+  city_state: z.string().trim().min(2, "Informe sua cidade e estado"),
+  email: z.string().trim().email("Email inválido").max(255),
+  whatsapp: z.string().trim().min(8, "WhatsApp inválido").max(25),
+  area: z.string().trim().min(1, "Selecione uma área").max(80),
+  message: z.string().trim().min(10, "Descreva brevemente o ocorrido").max(2000),
+  urgency: z.string().min(1, "Selecione uma opção"),
+  investment_ready: z.string().min(1, "Selecione uma opção"),
 });
 
 const fmtDate = (d: Date) =>
@@ -120,7 +125,12 @@ const Agendar = () => {
       email: parsed.data.email,
       whatsapp: parsed.data.whatsapp,
       area: parsed.data.area,
-      message: parsed.data.message ?? null,
+      message: parsed.data.message,
+      filling_as: parsed.data.filling_as,
+      company_name: parsed.data.company_name,
+      city_state: parsed.data.city_state,
+      urgency: parsed.data.urgency,
+      investment_ready: parsed.data.investment_ready,
       slot_at: slot.toISOString(),
     });
     setSubmitting(false);
@@ -224,11 +234,17 @@ const Agendar = () => {
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="col-span-12 md:col-span-5 space-y-6" noValidate>
-            <div className="label-caps text-foreground/50 mb-2">3. Informe seus dados</div>
+          <form onSubmit={handleSubmit} className="col-span-12 md:col-span-5 space-y-8" noValidate>
+            <div className="space-y-4">
+              <div className="label-caps text-olive mb-2">3. Solicitação de Análise Jurídica Estratégica</div>
+              <p className="text-xs text-foreground/60 leading-relaxed">
+                Este formulário é destinado a pessoas físicas e empresas que desejam análise jurídica estratégica. 
+                As informações serão avaliadas previamente. Entraremos em contato apenas em casos com viabilidade técnica e alinhamento estratégico.
+              </p>
+            </div>
 
             <div className="border border-foreground/15 p-5 bg-foreground/[0.02]">
-              <div className="label-caps text-foreground/50">Reserva</div>
+              <div className="label-caps text-foreground/50">Reserva selecionada</div>
               <div className="serif text-xl mt-1">
                 {fmtDate(selectedDay)}
                 {selectedHour !== null && (
@@ -237,35 +253,93 @@ const Agendar = () => {
               </div>
             </div>
 
-            <div>
-              <label className="label-caps text-foreground/60">Nome</label>
-              <input name="name" className={field} placeholder="Seu nome completo" />
-              {errors.name && <p className="text-destructive text-sm mt-1">{errors.name}</p>}
-            </div>
-            <div>
-              <label className="label-caps text-foreground/60">Email</label>
-              <input name="email" type="email" className={field} placeholder="voce@empresa.com" />
-              {errors.email && <p className="text-destructive text-sm mt-1">{errors.email}</p>}
-            </div>
-            <div>
-              <label className="label-caps text-foreground/60">WhatsApp</label>
-              <input name="whatsapp" className={field} placeholder="(00) 98765-4321" />
-            </div>
-            <div>
-              <label className="label-caps text-foreground/60">Área</label>
-              <select name="area" defaultValue="" className={field}>
-                <option value="" disabled>Selecione…</option>
-                <option>Contratos</option>
-                <option>LGPD & Compliance</option>
-                <option>Direito Digital</option>
-                <option>Direito do Consumidor</option>
-                <option>Outra</option>
-              </select>
-              {errors.area && <p className="text-destructive text-sm mt-1">{errors.area}</p>}
-            </div>
-            <div>
-              <label className="label-caps text-foreground/60">Mensagem (opcional)</label>
-              <textarea name="message" rows={3} className={field} placeholder="Conte brevemente sobre o caso…" />
+            <div className="space-y-6">
+              <div>
+                <label className="label-caps text-foreground/60">Nome completo*</label>
+                <input name="name" className={field} placeholder="Seu nome completo" />
+                {errors.name && <p className="text-destructive text-xs mt-1">{errors.name}</p>}
+              </div>
+
+              <div>
+                <label className="label-caps text-foreground/60">Você está preenchendo o formulário como:*</label>
+                <select name="filling_as" defaultValue="" className={field}>
+                  <option value="" disabled>Selecione…</option>
+                  <option value="Pessoa Física">Pessoa Física</option>
+                  <option value="Pessoa Jurídica">Pessoa Jurídica</option>
+                  <option value="Representante da Empresa">Representante da Empresa</option>
+                </select>
+                {errors.filling_as && <p className="text-destructive text-xs mt-1">{errors.filling_as}</p>}
+              </div>
+
+              <div>
+                <label className="label-caps text-foreground/60">Nome da empresa (se aplicável)</label>
+                <input name="company_name" className={field} placeholder="Nome da empresa" />
+              </div>
+
+              <div>
+                <label className="label-caps text-foreground/60">Cidade e Estado*</label>
+                <input name="city_state" className={field} placeholder="Ex: Goiânia - GO" />
+                {errors.city_state && <p className="text-destructive text-xs mt-1">{errors.city_state}</p>}
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="label-caps text-foreground/60">Telefone com WhatsApp*</label>
+                  <input name="whatsapp" className={field} placeholder="(00) 98765-4321" />
+                  {errors.whatsapp && <p className="text-destructive text-xs mt-1">{errors.whatsapp}</p>}
+                </div>
+                <div>
+                  <label className="label-caps text-foreground/60">Email*</label>
+                  <input name="email" type="email" className={field} placeholder="contato@exemplo.com" />
+                  {errors.email && <p className="text-destructive text-xs mt-1">{errors.email}</p>}
+                </div>
+              </div>
+
+              <div>
+                <label className="label-caps text-foreground/60">Área de interesse*</label>
+                <select name="area" defaultValue="" className={field}>
+                  <option value="" disabled>Selecione…</option>
+                  <option>Contratos</option>
+                  <option>LGPD & Compliance</option>
+                  <option>Direito Digital</option>
+                  <option>Direito do Consumidor</option>
+                  <option>Obrigações Civis</option>
+                  <option>Registro de Marca</option>
+                  <option>Outra</option>
+                </select>
+                {errors.area && <p className="text-destructive text-xs mt-1">{errors.area}</p>}
+              </div>
+
+              <div>
+                <label className="label-caps text-foreground/60">Descreva de forma objetiva o ocorrido*</label>
+                <textarea 
+                  name="message" 
+                  rows={4} 
+                  className={field} 
+                  placeholder="Datas, valores aproximados e documentos existentes…" 
+                />
+                {errors.message && <p className="text-destructive text-xs mt-1">{errors.message}</p>}
+              </div>
+
+              <div>
+                <label className="label-caps text-foreground/60">Deseja agendar uma reunião de urgência?*</label>
+                <select name="urgency" defaultValue="" className={field}>
+                  <option value="" disabled>Selecione…</option>
+                  <option value="Sim">Sim</option>
+                  <option value="Não">Não</option>
+                </select>
+                {errors.urgency && <p className="text-destructive text-xs mt-1">{errors.urgency}</p>}
+              </div>
+
+              <div>
+                <label className="label-caps text-foreground/60">Caso haja viabilidade jurídica, você está disposto(a) a investir em solução estratégica?*</label>
+                <select name="investment_ready" defaultValue="" className={field}>
+                  <option value="" disabled>Selecione…</option>
+                  <option value="Sim">Sim</option>
+                  <option value="Estou avaliando as possibilidades">Estou avaliando as possibilidades</option>
+                </select>
+                {errors.investment_ready && <p className="text-destructive text-xs mt-1">{errors.investment_ready}</p>}
+              </div>
             </div>
 
             <button
