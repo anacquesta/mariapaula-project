@@ -2,7 +2,7 @@ import portrait from "@/assets/portrait.jpg";
 
 const Hero = () => {
   return (
-    <section id="inicio" className="relative pt-28 md:pt-36 pb-12 md:pb-16 overflow-hidden">
+    <section id="inicio" className="relative pt-20 md:pt-28 pb-8 md:pb-12 overflow-hidden">
       {/* decorative side label */}
       <div className="hidden lg:block absolute left-6 top-1/2 -translate-y-1/2 -rotate-90 origin-left">
         <span className="label-caps text-foreground/50">Edição 01 — Direito Digital · 2026</span>
@@ -16,7 +16,7 @@ const Hero = () => {
             <span className="label-caps text-olive">Advocacia · Estratégia</span>
           </div>
 
-          <h1 className="display text-[3.4rem] sm:text-7xl md:text-8xl lg:text-[8.5rem] leading-[0.92]">
+          <h1 className="display text-[3.2rem] sm:text-6xl md:text-7xl lg:text-[7.2rem] leading-[0.92]">
             Direito que <br />
             <span className="italic-serif text-olive">protege.</span>
             <br />
