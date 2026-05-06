@@ -62,16 +62,6 @@ const Areas = () => {
               <span className="italic">EM FOCO</span>
             </h2>
           </div>
-          
-          <div className="mt-20">
-            <a 
-              href="#contato" 
-              className="group flex items-center gap-2 label-caps text-[10px] tracking-widest text-charcoal hover:text-olive transition-colors border-b border-charcoal/20 pb-1 w-fit"
-            >
-              VER TODOS
-              <span aria-hidden>→</span>
-            </a>
-          </div>
         </div>
 
         {/* Right Column: Projects Grid */}
