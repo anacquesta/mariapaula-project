@@ -34,7 +34,7 @@ const About = () => {
               <span className="italic">IMPACTANTE.</span>
             </h2>
             <p className="text-foreground/70 leading-relaxed text-sm max-w-sm">
-              Sou a Dra. Maria Paula Lino, advogada especialista em Direito Digital, LGPD, Contratos e Compliance. Atuo para empresas e profissionais que buscam estrutura jurídica estratégica antes da crise, não depois.
+              Sou a Dra. Maria Paula Lino, advogada especialista em Direito Digital, LGPD, Contratos e Compliance. Atuo para empresas e profissionais que buscam estrutura jurídica estratégica, tanto na prevenção quanto na resolução de conflitos e processos judiciais.
             </p>
             <p className="text-foreground/70 leading-relaxed text-sm max-w-sm">
               Co-autora do livro "Compliance, LGPD e ESG", professora convidada na pós-graduação da PUC-GO e Diretora na MILA (Movimiento por la Integridad en Latinoamérica). Sou formada pelo Mackenzie, com pesquisa publicada em Coimbra e pós-graduação pela PUCRS e especialização pela LEC.
