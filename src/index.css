@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Editorial palette - HSL */
+    --background: 42 28% 94%;          /* #F5F2EC off-white */
+    --foreground: 0 0% 10%;            /* #1A1A1A charcoal */
+
+    --card: 42 28% 94%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 42 28% 94%;
+    --popover-foreground: 0 0% 10%;
+
+    --primary: 80 24% 39%;             /* #6B7C4E olive */
+    --primary-foreground: 42 28% 94%;
+
+    --secondary: 0 0% 10%;             /* charcoal */
+    --secondary-foreground: 42 28% 94%;
+
+    --muted: 42 18% 88%;
+    --muted-foreground: 0 0% 30%;
+
+    --accent: 44 53% 54%;              /* #C9A84C gold */
+    --accent-foreground: 0 0% 10%;
+
+    --lilac: 264 30% 78%;              /* #C4B5D9 */
+    --olive: 80 24% 39%;
+    --gold: 44 53% 54%;
+    --charcoal: 0 0% 10%;
+    --offwhite: 42 28% 94%;
+
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 42 28% 94%;
+
+    --border: 0 0% 10% / 0.12;
+    --input: 0 0% 10% / 0.15;
+    --ring: 80 24% 39%;
+
+    --radius: 0.25rem;
+  }
+  html {
+    font-size: 85%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(0 0% 10% / 0.12);
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-feature-settings: "ss01", "ss02";
+  }
+  h1, h2, h3, h4, .serif {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .label-caps {
+    font-family: 'DM Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
+  .display {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+  }
+  .italic-serif {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+  .hover-underline {
+    position: relative;
+  }
+  .hover-underline::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: -2px;
+    width: 100%; height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease;
+  }
+  .hover-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+  .rotate-text {
+    animation: spin-slow 22s linear infinite;
+  }
+  @keyframes spin-slow {
+    to { transform: rotate(360deg); }
+  }
+}
