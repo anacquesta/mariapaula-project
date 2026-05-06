@@ -169,7 +169,7 @@ const Agendar = () => {
           {/* Calendar */}
           <div className="col-span-12 md:col-span-7">
             <div className="label-caps text-foreground/50 mb-4">1. Selecione o dia</div>
-            <div className="flex gap-3 overflow-x-auto pb-3 -mx-4 px-4">
+            <div className="flex gap-3 overflow-x-auto pb-4 -mx-4 px-4 snap-x snap-mandatory flex-nowrap scrollbar-hide">
               {days.map((d) => {
                 const active = isoDay(d).getTime() === isoDay(selectedDay).getTime();
                 return (
@@ -179,7 +179,7 @@ const Agendar = () => {
                       setSelectedDay(d);
                       setSelectedHour(null);
                     }}
-                    className={`shrink-0 px-5 py-4 border transition-colors text-left min-w-[110px] ${active
+                    className={`shrink-0 px-5 py-4 border transition-colors text-left min-w-[110px] snap-start ${active
                       ? "bg-charcoal text-offwhite border-charcoal"
                       : "border-foreground/20 hover:border-olive"
                       }`}

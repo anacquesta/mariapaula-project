@@ -115,4 +115,11 @@
   @keyframes spin-slow {
     to { transform: rotate(360deg); }
   }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
