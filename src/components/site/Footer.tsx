@@ -45,9 +45,9 @@ const Footer = () => (
       <div className="md:col-span-3 space-y-6">
         <div className="label-caps text-[10px] tracking-[0.2em] text-gold">CONTATO</div>
         <ul className="space-y-3 text-[10px] tracking-widest text-offwhite/60">
-          <li>MARIAPAULALINOSA@OUTLOOK.COM</li>
+          <li>MARIAPAULALINO.ADV@GMAIL.COM</li>
           <li>+55 (64) 99999-8533</li>
-          <li>GOIÂNIA · GO</li>
+          <li>GOIÂNIA · GO | CAMPINAS · SP</li>
         </ul>
       </div>
 
