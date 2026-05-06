@@ -48,7 +48,7 @@ const featuredAreas = [
 const Areas = () => {
   const ref = useReveal<HTMLDivElement>();
   return (
-    <section id="servicos" className="py-12 md:py-20 bg-offwhite">
+    <section id="servicos" className="py-12 md:pt-20 md:pb-12 bg-offwhite">
       <div ref={ref} className="container reveal grid md:grid-cols-12 gap-12 items-start">
         {/* Left Column: Title & Link */}
         <div className="md:col-span-3 flex flex-col justify-between h-full py-2">
