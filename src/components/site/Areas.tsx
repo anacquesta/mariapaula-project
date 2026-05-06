@@ -3,6 +3,7 @@ import project2 from "@/assets/project-2.png";
 import project3 from "@/assets/project-3.png";
 import project4 from "@/assets/project-4.png";
 import project5 from "@/assets/project-5.png";
+import project6 from "@/assets/project-6.png";
 import { useReveal } from "@/hooks/use-reveal";
 
 const featuredAreas = [
@@ -32,6 +33,12 @@ const featuredAreas = [
   },
   {
     n: "05",
+    title: "OBRIGAÇÕES CIVIS",
+    subtitle: "Execução de Contratos, Cobrança & Responsabilidade Civil",
+    img: project6,
+  },
+  {
+    n: "06",
     title: "REGISTRO DE MARCA",
     subtitle: "Proteção de Ativos",
     img: project5,
