@@ -1,4 +1,4 @@
-import { Instagram, Linkedin } from "lucide-react";
+import { Instagram, Linkedin, Globe } from "lucide-react";
 
 const Footer = () => (
   <footer className="bg-charcoal text-offwhite py-10 border-t border-offwhite/5">
@@ -28,6 +28,14 @@ const Footer = () => (
             className="text-offwhite/40 hover:text-gold transition-colors"
           >
             <Linkedin size={18} />
+          </a>
+          <a 
+            href="https://mariapaulalinoadv.taplink.bio/" 
+            target="_blank" 
+            rel="noreferrer" 
+            className="text-offwhite/40 hover:text-gold transition-colors"
+          >
+            <Globe size={18} />
           </a>
         </div>
       </div>
