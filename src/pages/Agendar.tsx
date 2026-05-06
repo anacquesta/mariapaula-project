@@ -167,9 +167,9 @@ const Agendar = () => {
       <section className="pb-24">
         <div className="container grid grid-cols-12 gap-10 md:gap-16">
           {/* Calendar */}
-          <div className="col-span-12 md:col-span-7 overflow-hidden">
+          <div className="col-span-12 md:col-span-7">
             <div className="label-caps text-foreground/50 mb-4">1. Selecione o dia</div>
-            <div className="flex gap-3 overflow-x-auto pb-4 snap-x snap-mandatory flex-nowrap scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
+            <div className="flex gap-3 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0 md:flex-wrap md:overflow-visible">
               {days.map((d) => {
                 const active = isoDay(d).getTime() === isoDay(selectedDay).getTime();
                 return (
