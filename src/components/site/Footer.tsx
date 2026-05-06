@@ -34,10 +34,12 @@ const Footer = () => (
       <div className="md:col-span-3 space-y-6">
         <div className="label-caps text-[10px] tracking-[0.2em] text-gold">SERVIÇOS</div>
         <ul className="space-y-3 text-[10px] tracking-widest text-offwhite/60 uppercase">
-          <li>CONTRATOS DIGITAIS</li>
-          <li>ADEQUAÇÃO LGPD</li>
-          <li>COMPLIANCE DIGITAL</li>
+          <li>CONTRATOS ESTRATÉGICOS</li>
+          <li>LGPD & COMPLIANCE</li>
+          <li>DIREITO DIGITAL</li>
           <li>DIREITO DO CONSUMIDOR</li>
+          <li>OBRIGAÇÕES CIVIS</li>
+          <li>REGISTRO DE MARCA</li>
         </ul>
       </div>
 
