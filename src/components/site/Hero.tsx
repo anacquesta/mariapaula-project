@@ -2,7 +2,7 @@ import portrait from "@/assets/portrait.jpg";
 
 const Hero = () => {
   return (
-    <section id="inicio" className="relative pt-20 md:pt-28 pb-8 md:pb-12 overflow-hidden">
+    <section id="inicio" className="relative pt-20 md:pt-28 pb-16 md:pb-24 overflow-hidden">
       {/* decorative side label */}
       <div className="hidden lg:block absolute left-6 top-1/2 -translate-y-1/2 -rotate-90 origin-left">
         <span className="label-caps text-foreground/50">Edição 01 — Direito Digital · 2026</span>
@@ -30,7 +30,7 @@ const Hero = () => {
 
           <div className="mt-10 flex flex-wrap items-center gap-6">
             <a
-              href="#contato"
+              href="/agendar"
               className="inline-flex items-center gap-3 bg-charcoal text-offwhite px-8 py-4 label-caps hover:bg-olive transition-colors duration-300"
             >
               Agendar consulta
@@ -60,7 +60,7 @@ const Hero = () => {
               className="relative z-10 w-full h-full object-cover grayscale-[15%]"
             />
             {/* Rotating circle label */}
-            <div className="absolute -bottom-10 -left-10 w-32 h-32 z-20 hidden md:block">
+            <a href="/agendar" className="absolute -bottom-10 -left-10 w-32 h-32 z-20 hidden md:block hover:scale-105 transition-transform duration-300">
               <svg viewBox="0 0 200 200" className="rotate-text w-full h-full">
                 <defs>
                   <path id="circ" d="M 100,100 m -78,0 a 78,78 0 1,1 156,0 a 78,78 0 1,1 -156,0" />
@@ -75,7 +75,7 @@ const Hero = () => {
               <div className="absolute inset-0 flex items-center justify-center">
                 <span className="text-gold text-2xl">→</span>
               </div>
-            </div>
+            </a>
             {/* Tag */}
             <div className="absolute -top-3 right-0 z-20 bg-offwhite border border-foreground/15 px-3 py-1.5">
               <span className="label-caps text-foreground/70">OAB · Brasil</span>
