@@ -1,6 +1,8 @@
 import project1 from "@/assets/project-1.png";
 import project2 from "@/assets/project-2.png";
 import project3 from "@/assets/project-3.png";
+import project4 from "@/assets/project-4.png";
+import project5 from "@/assets/project-5.png";
 import { useReveal } from "@/hooks/use-reveal";
 
 const featuredAreas = [
@@ -21,6 +23,18 @@ const featuredAreas = [
     title: "DIREITO DIGITAL",
     subtitle: "Plataformas & E-commerce",
     img: project3,
+  },
+  {
+    n: "04",
+    title: "CONSUMIDOR",
+    subtitle: "Defesa & Relações de Consumo",
+    img: project4,
+  },
+  {
+    n: "05",
+    title: "REGISTRO DE MARCA",
+    subtitle: "Proteção de Ativos",
+    img: project5,
   },
 ];
 
