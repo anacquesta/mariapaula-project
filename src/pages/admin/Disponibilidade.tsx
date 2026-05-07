@@ -61,8 +61,8 @@ const Disponibilidade = () => {
       .from("blocked_dates")
       .insert([
         { 
-          start_date: new Date(startDate).toISOString(), 
-          end_date: new Date(endDate).toISOString(), 
+          start_date: new Date(startDate + "T00:00:00").toISOString(), 
+          end_date: new Date(endDate + "T23:59:59").toISOString(), 
           reason 
         }
       ]);

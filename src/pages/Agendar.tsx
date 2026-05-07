@@ -121,12 +121,10 @@ const Agendar = () => {
     return blockedDates.some(block => {
       const start = new Date(block.start_date);
       const end = new Date(block.end_date);
-      // Ensure the end date covers the full day if it was set via date input
-      const adjustedEnd = new Date(end);
-      if (adjustedEnd.getHours() === 0 && adjustedEnd.getMinutes() === 0) {
-        adjustedEnd.setHours(23, 59, 59, 999);
-      }
-      return date >= start && date <= adjustedEnd;
+      
+      // Ensure the end date covers the full day if it was set via date input (T23:59:59)
+      // and comparing correctly with the slot date
+      return date >= start && date <= end;
     });
   };
 
