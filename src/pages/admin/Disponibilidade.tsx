@@ -40,14 +40,14 @@ const Disponibilidade = () => {
   const fetchBlocks = async () => {
     setLoading(true);
     const { data, error } = await supabase
-      .from("blocked_dates")
+      .from("blocked_dates" as any)
       .select("*")
       .order("start_date", { ascending: true });
 
     if (error) {
       toast.error("Erro ao carregar bloqueios");
     } else {
-      setBlocks(data || []);
+      setBlocks((data as any) || []);
     }
     setLoading(false);
   };
@@ -58,7 +58,7 @@ const Disponibilidade = () => {
 
     setIsSubmitting(true);
     const { error } = await supabase
-      .from("blocked_dates")
+      .from("blocked_dates" as any)
       .insert([
         { 
           start_date: new Date(startDate + "T00:00:00").toISOString(), 
@@ -81,7 +81,7 @@ const Disponibilidade = () => {
 
   const deleteBlock = async (id: string) => {
     const { error } = await supabase
-      .from("blocked_dates")
+      .from("blocked_dates" as any)
       .delete()
       .eq("id", id);
 

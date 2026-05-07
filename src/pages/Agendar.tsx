@@ -75,7 +75,7 @@ const Agendar = () => {
 
     // Fetch blocked dates
     const { data: blockedData } = await supabase
-      .from("blocked_dates")
+      .from("blocked_dates" as any)
       .select("*")
       .gte("end_date", from.toISOString());
 
@@ -84,7 +84,7 @@ const Agendar = () => {
     }
     
     if (blockedData) {
-      setBlockedDates(blockedData);
+      setBlockedDates(blockedData as any);
     }
 
     setLoadingSlots(false);
@@ -151,7 +151,7 @@ const Agendar = () => {
 
     // Verificação de última hora: o horário foi bloqueado enquanto o cliente estava na página?
     const { data: blockedNow } = await supabase
-      .from("blocked_dates")
+      .from("blocked_dates" as any)
       .select("id")
       .lte("start_date", slotIso)
       .gte("end_date", slotIso)
