@@ -145,7 +145,25 @@ const Agendar = () => {
     }
     setErrors({});
     setSubmitting(true);
+    
     const slot = slotDate(selectedDay, selectedHour);
+    const slotIso = slot.toISOString();
+
+    // Verificação de última hora: o horário foi bloqueado enquanto o cliente estava na página?
+    const { data: blockedNow } = await supabase
+      .from("blocked_dates")
+      .select("id")
+      .lte("start_date", slotIso)
+      .gte("end_date", slotIso)
+      .maybeSingle();
+
+    if (blockedNow) {
+      toast.error("Este horário não está mais disponível. Por favor, escolha outro dia.");
+      loadTaken();
+      setSubmitting(false);
+      return;
+    }
+
     const { error } = await supabase.from("appointments").insert({
       name: parsed.data.name,
       email: parsed.data.email,
