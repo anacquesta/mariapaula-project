@@ -56,6 +56,7 @@ const Agendar = () => {
   const [selectedDay, setSelectedDay] = useState<Date>(days[0]);
   const [selectedHour, setSelectedHour] = useState<number | null>(null);
   const [taken, setTaken] = useState<Set<string>>(new Set());
+  const [blockedDates, setBlockedDates] = useState<any[]>([]);
   const [loadingSlots, setLoadingSlots] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -65,13 +66,27 @@ const Agendar = () => {
     const from = isoDay(days[0]);
     const to = new Date(isoDay(days[days.length - 1]));
     to.setDate(to.getDate() + 1);
-    const { data, error } = await supabase.rpc("get_taken_slots", {
+
+    // Fetch taken slots
+    const { data: takenData, error: takenError } = await supabase.rpc("get_taken_slots", {
       from_date: from.toISOString(),
       to_date: to.toISOString(),
     });
-    if (!error && data) {
-      setTaken(new Set(data.map((r: { slot_at: string }) => new Date(r.slot_at).toISOString())));
+
+    // Fetch blocked dates
+    const { data: blockedData } = await supabase
+      .from("blocked_dates")
+      .select("*")
+      .gte("end_date", from.toISOString());
+
+    if (!takenError && takenData) {
+      setTaken(new Set(takenData.map((r: { slot_at: string }) => new Date(r.slot_at).toISOString())));
     }
+    
+    if (blockedData) {
+      setBlockedDates(blockedData);
+    }
+
     setLoadingSlots(false);
   };
 
@@ -95,7 +110,25 @@ const Agendar = () => {
     return d;
   };
 
-  const isTaken = (day: Date, hour: number) => taken.has(slotDate(day, hour).toISOString());
+  const isTaken = (day: Date, hour: number) => {
+    const date = slotDate(day, hour);
+    const iso = date.toISOString();
+    
+    // Check if taken in appointments
+    if (taken.has(iso)) return true;
+    
+    // Check if blocked in blocked_dates (férias/bloqueios)
+    return blockedDates.some(block => {
+      const start = new Date(block.start_date);
+      const end = new Date(block.end_date);
+      // Ensure the end date covers the full day if it was set via date input
+      const adjustedEnd = new Date(end);
+      if (adjustedEnd.getHours() === 0 && adjustedEnd.getMinutes() === 0) {
+        adjustedEnd.setHours(23, 59, 59, 999);
+      }
+      return date >= start && date <= adjustedEnd;
+    });
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -288,3 +321,4 @@ const Agendar = () => {
 };
 
 export default Agendar;
+
