@@ -100,6 +100,8 @@ const Contact = () => {
                 <option className="text-charcoal">LGPD & Compliance</option>
                 <option className="text-charcoal">Direito Digital</option>
                 <option className="text-charcoal">Direito do Consumidor</option>
+                <option className="text-charcoal">Obrigações Civis</option>
+                <option className="text-charcoal">Registro de Marca</option>
                 <option className="text-charcoal">Outra</option>
               </select>
               {errors.area && <p className="text-destructive-foreground text-sm mt-1 bg-destructive/20 px-2 py-0.5">{errors.area}</p>}
