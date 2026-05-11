@@ -46,8 +46,8 @@ const Contact = () => {
   return (
     <section id="contato" className="py-12 md:py-20 bg-olive text-offwhite">
       <div ref={ref} className="container reveal grid grid-cols-12 gap-10 md:gap-16">
-        <div className="col-span-12 md:col-span-5">
-          <div className="flex items-center gap-3 mb-6">
+        <div className="col-span-12 md:col-span-5 flex flex-col items-center text-center md:items-start md:text-left">
+          <div className="flex items-center justify-center md:justify-start gap-3 mb-6">
             <span className="h-px w-12 bg-offwhite" />
             <span className="label-caps text-offwhite">Contato</span>
           </div>
@@ -55,11 +55,11 @@ const Contact = () => {
             Conte sobre <br />
             <span className="italic-serif text-charcoal">o seu caso.</span>
           </h2>
-          <p className="mt-8 text-offwhite/70 max-w-sm">
+          <p className="mt-8 text-offwhite/70 max-w-sm mx-auto md:mx-0">
             Resposta em até 24h úteis. Sigilo absoluto.
           </p>
 
-          <div className="mt-12 space-y-4">
+          <div className="mt-12 space-y-4 flex flex-col items-center text-center md:items-start md:text-left">
             <div>
               <div className="label-caps text-offwhite/50 mb-1">Email</div>
               <a href="mailto:mariapaulalino.adv@gmail.com" className="hover-underline text-offwhite uppercase">
@@ -113,7 +113,7 @@ const Contact = () => {
             {errors.mensagem && <p className="text-destructive-foreground text-sm mt-1 bg-destructive/20 px-2 py-0.5">{errors.mensagem}</p>}
           </div>
 
-          <div className="flex flex-wrap items-center gap-6 pt-4">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 pt-4">
             <button
               type="submit"
               disabled={loading}

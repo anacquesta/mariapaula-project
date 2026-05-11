@@ -10,8 +10,8 @@ const Hero = () => {
 
       <div className="container grid grid-cols-12 gap-6 md:gap-10 items-end">
         {/* LEFT — typography */}
-        <div className="col-span-12 lg:col-span-7 relative">
-          <div className="flex items-center gap-3 mb-8">
+        <div className="col-span-12 lg:col-span-7 relative flex flex-col items-center text-center lg:items-start lg:text-left">
+          <div className="flex items-center justify-center lg:justify-start gap-3 mb-8">
             <span className="h-px w-12 bg-olive" />
             <span className="label-caps text-olive">Advocacia · Estratégia</span>
           </div>
@@ -24,11 +24,11 @@ const Hero = () => {
             <span className="italic-serif text-olive">impulsiona.</span>
           </h1>
 
-          <p className="mt-10 max-w-md text-foreground/70 text-base md:text-lg">
+          <p className="mt-10 max-w-md mx-auto lg:mx-0 text-foreground/70 text-base md:text-lg">
             Estrutura jurídica estratégica para empresas e profissionais que vivem no digital.
           </p>
 
-          <div className="mt-10 flex flex-wrap items-center gap-6">
+          <div className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-6">
             <a
               href="/agendar"
               className="inline-flex items-center gap-3 bg-charcoal text-offwhite px-8 py-4 label-caps hover:bg-olive transition-colors duration-300"

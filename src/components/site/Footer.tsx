@@ -5,14 +5,14 @@ const Footer = () => (
     <div className="container grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-start">
 
       {/* Logo & Bio */}
-      <div className="md:col-span-4 space-y-6">
+      <div className="md:col-span-4 space-y-6 flex flex-col items-center text-center md:items-start md:text-left">
         <div className="serif text-2xl tracking-tight">
           MARIA PAULA <span className="italic text-gold">LINO</span>
         </div>
-        <p className="text-offwhite/50 text-xs leading-relaxed max-w-xs">
+        <p className="text-offwhite/50 text-xs leading-relaxed max-w-xs mx-auto md:mx-0">
           Advocacia editorial e estratégica para negócios digitais. Unindo segurança jurídica e visão de negócio.
         </p>
-        <div className="flex items-center gap-4 pt-2">
+        <div className="flex items-center justify-center md:justify-start gap-4 pt-2">
           <a 
             href="https://www.instagram.com/mariapaulalino_adv/" 
             target="_blank" 
@@ -41,7 +41,7 @@ const Footer = () => (
       </div>
 
       {/* Navigation */}
-      <div className="md:col-span-2 space-y-6">
+      <div className="md:col-span-2 space-y-6 flex flex-col items-center text-center md:items-start md:text-left">
         <div className="label-caps text-[10px] tracking-[0.2em] text-gold">NAVEGAÇÃO</div>
         <ul className="space-y-3 text-[10px] tracking-widest text-offwhite/60">
           <li><a href="/" className="hover:text-offwhite transition-colors">INÍCIO</a></li>
@@ -52,7 +52,7 @@ const Footer = () => (
       </div>
 
       {/* Services */}
-      <div className="md:col-span-3 space-y-6">
+      <div className="md:col-span-3 space-y-6 flex flex-col items-center text-center md:items-start md:text-left">
         <div className="label-caps text-[10px] tracking-[0.2em] text-gold">SERVIÇOS</div>
         <ul className="space-y-3 text-[10px] tracking-widest text-offwhite/60 uppercase">
           <li>CONTRATOS ESTRATÉGICOS</li>
@@ -65,7 +65,7 @@ const Footer = () => (
       </div>
 
       {/* Contact */}
-      <div className="md:col-span-3 space-y-6">
+      <div className="md:col-span-3 space-y-6 flex flex-col items-center text-center md:items-start md:text-left">
         <div className="label-caps text-[10px] tracking-[0.2em] text-gold">CONTATO</div>
         <ul className="space-y-3 text-[10px] tracking-widest text-offwhite/60">
           <li>MARIAPAULALINO.ADV@GMAIL.COM</li>
@@ -76,7 +76,7 @@ const Footer = () => (
 
     </div>
 
-    <div className="container mt-20 pt-8 border-t border-offwhite/10 flex flex-col md:flex-row justify-between gap-4 label-caps text-[9px] tracking-[0.2em] text-offwhite/30">
+    <div className="container mt-20 pt-8 border-t border-offwhite/10 flex flex-col md:flex-row justify-between items-center gap-4 label-caps text-[9px] tracking-[0.2em] text-offwhite/30 text-center md:text-left">
       <span>© {new Date().getFullYear()} MARIA PAULA LINO — TODOS OS DIREITOS RESERVADOS</span>
       <span>DESENVOLVIDO POR <a href="https://carolgonzaga.site/" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">CAROLGONZAGA</a></span>
     </div>

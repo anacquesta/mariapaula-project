@@ -109,9 +109,9 @@ const Areas = () => {
     <section id="servicos" className="py-12 md:pt-20 md:pb-12 bg-offwhite">
       <div ref={ref} className="container reveal grid md:grid-cols-12 gap-12 items-start">
         {/* Left Column: Title & Link */}
-        <div className="md:col-span-3 flex flex-col justify-between h-full py-2">
+        <div className="md:col-span-3 flex flex-col items-center text-center md:items-start md:text-left justify-between h-full py-2">
           <div>
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center justify-center md:justify-start gap-3 mb-6">
               <span className="h-px w-8 bg-charcoal" />
               <span className="label-caps text-charcoal text-xs tracking-widest">Áreas em destaque</span>
             </div>
@@ -125,7 +125,7 @@ const Areas = () => {
         {/* Right Column: Projects Grid */}
         <div className="md:col-span-9 grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-12">
           {featuredAreas.map((area) => (
-            <article key={area.id} className="group space-y-4">
+            <article key={area.id} className="group space-y-4 flex flex-col items-center text-center md:items-start md:text-left">
               <div className="relative aspect-[4/3] overflow-hidden bg-muted">
                 <img 
                   src={area.img} 
@@ -138,7 +138,7 @@ const Areas = () => {
                 
                 <button 
                   onClick={() => toggleExpand(area.id)}
-                  className="flex items-center gap-2 text-[10px] label-caps tracking-[0.2em] text-charcoal/40 hover:text-charcoal transition-colors group/btn"
+                  className="flex items-center justify-center md:justify-start gap-2 text-[10px] label-caps tracking-[0.2em] text-charcoal/40 hover:text-charcoal transition-colors group/btn"
                 >
                   {expandedId === area.id ? (
                     <>RECOLHER ESPECIALIDADES <ChevronUp size={14} className="text-olive" /></>
@@ -155,7 +155,7 @@ const Areas = () => {
                 >
                   <ul className="space-y-2 py-4 border-t border-charcoal/5">
                     {area.services.map((service, index) => (
-                      <li key={index} className="text-[11px] text-charcoal/70 leading-relaxed flex items-start gap-2">
+                      <li key={index} className="text-[11px] text-charcoal/70 leading-relaxed flex items-start justify-center md:justify-start gap-2">
                         <span className="text-olive">—</span>
                         {service}
                       </li>

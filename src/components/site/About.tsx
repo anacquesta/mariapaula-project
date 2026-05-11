@@ -26,25 +26,25 @@ const About = () => {
       <div ref={ref} className="container reveal grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-stretch">
         
         {/* Left Column: Vision & Signature */}
-        <div className="md:col-span-4 flex flex-col justify-between space-y-12 py-4">
+        <div className="md:col-span-4 flex flex-col items-center text-center md:items-start md:text-left justify-between space-y-12 py-4">
           <div className="space-y-8">
             <h2 className="serif text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl leading-[0.9] text-charcoal">
               SIMPLES. <br />
               OBJETIVO. <br />
               <span className="italic">IMPACTANTE.</span>
             </h2>
-            <p className="text-foreground/70 leading-relaxed text-sm max-w-sm">
+            <p className="text-foreground/70 leading-relaxed text-sm max-w-sm mx-auto md:mx-0">
               Sou a Dra. Maria Paula Lino, advogada especialista em Direito Digital, LGPD, Contratos e Compliance. Atuo para empresas e profissionais que buscam estrutura jurídica estratégica, tanto na prevenção quanto na resolução de conflitos e processos judiciais.
             </p>
-            <p className="text-foreground/70 leading-relaxed text-sm max-w-sm">
+            <p className="text-foreground/70 leading-relaxed text-sm max-w-sm mx-auto md:mx-0">
               Co-autora do livro "Compliance, LGPD e ESG", professora convidada na pós-graduação da PUC-GO e Diretora na MILA (Movimiento por la Integridad en Latinoamérica). Sou formada pelo Mackenzie, com pesquisa publicada em Coimbra e pós-graduação pela PUCRS e especialização pela LEC.
             </p>
-            <p className="text-foreground/70 leading-relaxed text-sm max-w-sm">
+            <p className="text-foreground/70 leading-relaxed text-sm max-w-sm mx-auto md:mx-0">
               Acredito em um jurídico mais próximo e sem complicação. Para mim, o Direito deve servir para facilitar a vida, resolver problemas e colocar as coisas no lugar certo.
             </p>
           </div>
           
-          <div className="pt-8">
+          <div className="pt-8 flex flex-col items-center text-center md:items-start md:text-left">
              <span className="serif italic text-3xl text-olive block">Maria Paula Lino</span>
              <div className="label-caps text-[10px] text-foreground/40 mt-2 tracking-widest">ADVOGADA & ESTRATEGISTA DIGITAL</div>
           </div>
@@ -63,15 +63,15 @@ const About = () => {
         </div>
 
         {/* Right Column: Testimonials */}
-        <div className="md:col-span-3 space-y-10 py-4">
-          <div className="flex items-center gap-3 mb-4">
+        <div className="md:col-span-3 space-y-10 py-4 flex flex-col items-center text-center md:items-start md:text-left">
+          <div className="flex items-center justify-center md:justify-start gap-3 mb-4 w-full">
             <span className="h-px w-8 bg-charcoal" />
             <span className="label-caps text-charcoal text-xs tracking-widest">Depoimentos</span>
           </div>
           
           <div className="space-y-12">
             {quotes.map((t, i) => (
-              <figure key={i} className="space-y-4">
+              <figure key={i} className="space-y-4 flex flex-col items-center text-center md:items-start md:text-left">
                 <span className="serif text-4xl text-olive leading-none block">“</span>
                 <blockquote className="text-foreground/80 text-sm leading-relaxed italic">
                   {t.q}

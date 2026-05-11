@@ -25,7 +25,7 @@ const Pillars = () => {
       <div ref={ref} className="container reveal">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-4 items-start">
           {/* Label Section */}
-          <div className="md:col-span-3 flex items-center gap-3">
+          <div className="md:col-span-3 flex items-center justify-center md:justify-start gap-3">
             <span className="h-px w-8 bg-gold" />
             <span className="label-caps text-gold text-xs tracking-widest whitespace-nowrap">O que eu faço</span>
           </div>
@@ -33,7 +33,7 @@ const Pillars = () => {
           {/* Pillars Grid */}
           <div className="md:col-span-9 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             {pillars.map((p) => (
-              <article key={p.n} className="space-y-4">
+              <article key={p.n} className="space-y-4 flex flex-col items-center text-center md:items-start md:text-left">
                 <div className="label-caps text-gold text-[10px] tracking-[0.2em]">
                   {p.n}. {p.title.toUpperCase()}
                 </div>
