@@ -25,7 +25,7 @@ const Pillars = () => {
       <div ref={ref} className="container reveal">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-4 items-start">
           {/* Label Section */}
-          <div className="md:col-span-3 flex items-center justify-center md:justify-start gap-3">
+          <div className="md:col-span-3 flex items-center justify-start gap-3">
             <span className="h-px w-8 bg-gold" />
             <span className="label-caps text-gold text-xs tracking-widest whitespace-nowrap">O que eu faço</span>
           </div>

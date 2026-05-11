@@ -11,7 +11,7 @@ const Hero = () => {
       <div className="container grid grid-cols-12 gap-6 md:gap-10 items-end">
         {/* LEFT — typography */}
         <div className="col-span-12 lg:col-span-7 relative flex flex-col items-center text-center lg:items-start lg:text-left">
-          <div className="flex items-center justify-center lg:justify-start gap-3 mb-8">
+          <div className="flex items-center justify-start gap-3 mb-8 w-full">
             <span className="h-px w-12 bg-olive" />
             <span className="label-caps text-olive">Advocacia · Estratégia</span>
           </div>

@@ -47,7 +47,7 @@ const Contact = () => {
     <section id="contato" className="py-12 md:py-20 bg-olive text-offwhite">
       <div ref={ref} className="container reveal grid grid-cols-12 gap-10 md:gap-16">
         <div className="col-span-12 md:col-span-5 flex flex-col items-center text-center md:items-start md:text-left">
-          <div className="flex items-center justify-center md:justify-start gap-3 mb-6">
+          <div className="flex items-center justify-start gap-3 mb-6 w-full">
             <span className="h-px w-12 bg-offwhite" />
             <span className="label-caps text-offwhite">Contato</span>
           </div>

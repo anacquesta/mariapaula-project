@@ -64,7 +64,7 @@ const About = () => {
 
         {/* Right Column: Testimonials */}
         <div className="md:col-span-3 space-y-10 py-4 flex flex-col items-center text-center md:items-start md:text-left">
-          <div className="flex items-center justify-center md:justify-start gap-3 mb-4 w-full">
+          <div className="flex items-center justify-start gap-3 mb-4 w-full">
             <span className="h-px w-8 bg-charcoal" />
             <span className="label-caps text-charcoal text-xs tracking-widest">Depoimentos</span>
           </div>

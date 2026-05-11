@@ -111,7 +111,7 @@ const Areas = () => {
         {/* Left Column: Title & Link */}
         <div className="md:col-span-3 flex flex-col items-center text-center md:items-start md:text-left justify-between h-full py-2">
           <div>
-            <div className="flex items-center justify-center md:justify-start gap-3 mb-6">
+            <div className="flex items-center justify-start gap-3 mb-6 w-full">
               <span className="h-px w-8 bg-charcoal" />
               <span className="label-caps text-charcoal text-xs tracking-widest">Áreas em destaque</span>
             </div>
