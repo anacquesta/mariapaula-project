@@ -133,8 +133,8 @@ const Areas = () => {
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105"
                 />
               </div>
-              <div className="space-y-4">
-                <h3 className="serif text-xl tracking-tight text-charcoal leading-tight">{area.title}</h3>
+              <div className="space-y-4 flex flex-col items-center md:items-start w-full">
+                <h3 className="serif text-xl tracking-tight text-charcoal leading-tight text-center md:text-left">{area.title}</h3>
                 
                 <button 
                   onClick={() => toggleExpand(area.id)}
