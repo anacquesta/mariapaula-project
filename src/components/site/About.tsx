@@ -28,7 +28,7 @@ const About = () => {
         {/* Left Column: Vision & Signature */}
         <div className="md:col-span-4 flex flex-col justify-between space-y-12 py-4">
           <div className="space-y-8">
-            <h2 className="serif text-5xl md:text-6xl lg:text-7xl leading-none text-charcoal">
+            <h2 className="serif text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl leading-[0.9] text-charcoal">
               SIMPLES. <br />
               OBJETIVO. <br />
               <span className="italic">IMPACTANTE.</span>
