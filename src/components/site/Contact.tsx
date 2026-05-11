@@ -41,11 +41,11 @@ const Contact = () => {
     }, 400);
   };
 
-  const field = "w-full bg-transparent border-b border-offwhite/25 focus:border-offwhite outline-none py-3 placeholder:text-offwhite/40 text-offwhite transition-colors";
+  const field = "w-full bg-transparent border-b border-offwhite/25 focus:border-offwhite outline-none py-3 placeholder:text-offwhite/40 text-offwhite transition-colors text-center md:text-left";
 
   return (
     <section id="contato" className="py-12 md:py-20 bg-olive text-offwhite">
-      <div ref={ref} className="container reveal grid grid-cols-12 gap-10 md:gap-16">
+      <div ref={ref} className="container reveal grid grid-cols-12 gap-y-12 md:gap-16">
         <div className="col-span-12 md:col-span-5 flex flex-col items-center text-center md:items-start md:text-left">
           <div className="flex items-center justify-start gap-3 mb-6 w-full">
             <span className="h-px w-12 bg-offwhite" />
@@ -75,25 +75,25 @@ const Contact = () => {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="col-span-12 md:col-span-7 space-y-7" noValidate>
+        <form onSubmit={handleSubmit} className="col-span-12 md:col-span-7 space-y-7 flex flex-col items-center md:items-start w-full" noValidate>
           <div className="grid md:grid-cols-2 gap-7">
             <div>
-              <label className="label-caps text-offwhite/60">Nome</label>
+              <label className="label-caps text-offwhite/60 block w-full text-center md:text-left">Nome</label>
               <input name="nome" maxLength={100} className={field} placeholder="Seu nome completo" />
               {errors.nome && <p className="text-destructive-foreground text-sm mt-1 bg-destructive/20 px-2 py-0.5">{errors.nome}</p>}
             </div>
             <div>
-              <label className="label-caps text-offwhite/60">Email</label>
+              <label className="label-caps text-offwhite/60 block w-full text-center md:text-left">Email</label>
               <input name="email" type="email" maxLength={255} className={field} placeholder="voce@empresa.com" />
               {errors.email && <p className="text-destructive-foreground text-sm mt-1 bg-destructive/20 px-2 py-0.5">{errors.email}</p>}
             </div>
             <div>
-              <label className="label-caps text-offwhite/60">WhatsApp</label>
+              <label className="label-caps text-offwhite/60 block w-full text-center md:text-left">WhatsApp</label>
               <input name="whatsapp" maxLength={25} className={field} placeholder="(11) 99999-9999" />
               {errors.whatsapp && <p className="text-destructive-foreground text-sm mt-1 bg-destructive/20 px-2 py-0.5">{errors.whatsapp}</p>}
             </div>
             <div>
-              <label className="label-caps text-offwhite/60">Área</label>
+              <label className="label-caps text-offwhite/60 block w-full text-center md:text-left">Área</label>
               <select name="area" defaultValue="" className={field}>
                 <option value="" disabled className="text-charcoal">Selecione…</option>
                 <option className="text-charcoal">Contratos</option>
@@ -107,8 +107,8 @@ const Contact = () => {
               {errors.area && <p className="text-destructive-foreground text-sm mt-1 bg-destructive/20 px-2 py-0.5">{errors.area}</p>}
             </div>
           </div>
-          <div>
-            <label className="label-caps text-offwhite/60">Mensagem</label>
+          <div className="w-full">
+            <label className="label-caps text-offwhite/60 block w-full text-center md:text-left">Mensagem</label>
             <textarea name="mensagem" rows={4} maxLength={1000} className={field} placeholder="Conte brevemente sobre sua demanda…" />
             {errors.mensagem && <p className="text-destructive-foreground text-sm mt-1 bg-destructive/20 px-2 py-0.5">{errors.mensagem}</p>}
           </div>
