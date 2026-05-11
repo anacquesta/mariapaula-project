@@ -4,18 +4,18 @@ import { useReveal } from "@/hooks/use-reveal";
 const quotes = [
   {
     q: "Excelente atendimento do início ao fim. Profissional extremamente atenciosa, transparente e competente. Tirou todas as minhas dúvidas com muita clareza e passou total confiança.",
-    a: "Saddan",
-    r: "Avaliação via Google",
+    a: "Lukas Ferrari",
+    r: "Engenheiro",
   },
   {
     q: "Excelente profissional, disponível, ética, assessoria impecável e de confiança. Recomendo.",
     a: "Beatriz Pessuto",
-    r: "Cliente",
+    r: "Médica",
   },
   {
     q: "Uma excelente advogada! Atenciosa, comprometida, humana, justa e totalmente empenhada em defender seu clientes. Confio de olhos fechados.... não troco por outra!",
     a: "Bruna Marques",
-    r: "Cliente",
+    r: "Empresária",
   },
 ];
 
