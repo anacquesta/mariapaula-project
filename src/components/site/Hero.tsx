@@ -43,7 +43,7 @@ const Hero = () => {
         </div>
 
         {/* RIGHT — editorial visual */}
-        <div className="col-span-12 lg:col-span-5 relative">
+        <div className="col-span-12 lg:col-span-5 relative mt-16 lg:mt-0">
           <div className="relative aspect-[3/4] w-full max-w-md mx-auto">
             {/* Olive block behind */}
             <div className="absolute -top-6 -left-6 w-2/3 h-2/3 bg-olive z-0" />

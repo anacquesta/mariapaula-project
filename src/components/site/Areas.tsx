@@ -109,8 +109,8 @@ const Areas = () => {
     <section id="servicos" className="py-12 md:pt-20 md:pb-12 bg-offwhite">
       <div ref={ref} className="container reveal grid md:grid-cols-12 gap-12 items-start">
         {/* Left Column: Title & Link */}
-        <div className="md:col-span-3 flex flex-col items-center text-center md:items-start md:text-left justify-between h-full py-2">
-          <div>
+        <div className="md:col-span-3 flex flex-col items-center text-center md:items-start md:text-left justify-between h-full py-2 w-full">
+          <div className="w-full">
             <div className="flex items-center justify-start gap-3 mb-6 w-full">
               <span className="h-px w-8 bg-charcoal" />
               <span className="label-caps text-charcoal text-xs tracking-widest">Áreas em destaque</span>
