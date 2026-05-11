@@ -3,19 +3,19 @@ import { useReveal } from "@/hooks/use-reveal";
 
 const quotes = [
   {
-    q: "Trouxe clareza para um terreno que parecia complexo. Nossa operação ficou mais leve e mais segura.",
-    a: "Camila R.",
-    r: "Founder · SaaS B2B",
+    q: "Excelente atendimento do início ao fim. Profissional extremamente atenciosa, transparente e competente. Tirou todas as minhas dúvidas com muita clareza e passou total confiança.",
+    a: "Saddan",
+    r: "Avaliação via Google",
   },
   {
-    q: "Atendimento estratégico, sem juridiquês. Sentimos que tínhamos uma sócia jurídica, não uma fornecedora.",
-    a: "Rafael M.",
-    r: "CEO · E-commerce",
+    q: "Excelente profissional, disponível, ética, assessoria impecável e de confiança. Recomendo.",
+    a: "Beatriz Pessuto",
+    r: "Cliente",
   },
   {
-    q: "A adequação à LGPD virou parte da nossa cultura. Recomendo sem hesitar.",
-    a: "Juliana T.",
-    r: "Head Jurídico · Healthtech",
+    q: "Uma excelente advogada! Atenciosa, comprometida, humana, justa e totalmente empenhada em defender seu clientes. Confio de olhos fechados.... não troco por outra!",
+    a: "Bruna Marques",
+    r: "Cliente",
   },
 ];
 
