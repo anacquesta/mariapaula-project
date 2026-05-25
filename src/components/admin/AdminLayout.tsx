@@ -113,7 +113,7 @@ const AdminLayout = ({ children }: { children: React.ReactNode }) => {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 p-6 md:p-12 max-w-7xl mx-auto w-full">
+      <main className="flex-1 p-6 md:p-12 max-w-7xl mx-auto w-full min-w-0">
         {children}
       </main>
     </div>

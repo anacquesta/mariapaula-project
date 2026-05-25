@@ -96,13 +96,13 @@ const Dashboard = () => {
             <p className="text-foreground/50 text-sm mt-2 uppercase tracking-widest label-caps">Gestão de consultas e clientes</p>
           </div>
 
-          <div className="flex items-center gap-2 bg-white p-1 border border-foreground/10 rounded-sm">
+          <div className="flex items-center justify-between gap-1 bg-white p-1 border border-foreground/10 rounded-sm w-full md:w-auto">
             {["upcoming", "all", "cancelled"].map((f) => (
               <button
                 key={f}
                 onClick={() => setFilter(f)}
                 className={`
-                  px-4 py-2 text-[10px] label-caps tracking-widest transition-all
+                  px-2 sm:px-4 py-2 text-[9px] sm:text-[10px] label-caps tracking-widest transition-all flex-1 md:flex-initial text-center
                   ${filter === f ? "bg-charcoal text-offwhite" : "text-foreground/40 hover:text-foreground"}
                 `}
               >
@@ -118,7 +118,7 @@ const Dashboard = () => {
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gold"></div>
           </div>
         ) : appointments.length === 0 ? (
-          <div className="bg-white border border-dashed border-foreground/20 rounded-lg p-20 text-center">
+          <div className="bg-white border border-dashed border-foreground/20 rounded-lg py-20 px-6 sm:px-20 text-center">
             <CalendarIcon className="mx-auto text-foreground/20 mb-4" size={48} />
             <p className="text-foreground/40 label-caps tracking-widest">Nenhum agendamento encontrado</p>
           </div>
@@ -127,7 +127,7 @@ const Dashboard = () => {
             {appointments.map((apt) => (
               <div 
                 key={apt.id}
-                className="bg-white border border-foreground/5 p-6 hover:border-gold/30 transition-all shadow-sm flex flex-col md:flex-row md:items-center gap-6"
+                className="bg-white border border-foreground/5 p-4 sm:p-6 hover:border-gold/30 transition-all shadow-sm flex flex-col md:flex-row md:items-center gap-6"
               >
                 {/* Date & Time */}
                 <div className="md:w-48 flex flex-col items-start gap-1">
@@ -143,15 +143,15 @@ const Dashboard = () => {
                 </div>
 
                 {/* Client Info */}
-                <div className="flex-1 space-y-1">
-                  <div className="flex items-center gap-3">
+                <div className="flex-1 space-y-1 min-w-0 w-full">
+                  <div className="flex flex-wrap items-center gap-3">
                     <h3 className="serif text-xl text-charcoal">{apt.name}</h3>
                     {getStatusBadge(apt.status)}
                   </div>
                   <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-foreground/50">
-                    <span className="uppercase tracking-widest font-bold text-gold">{apt.area}</span>
-                    <span>{apt.email}</span>
-                    <span>{apt.whatsapp}</span>
+                    <span className="uppercase tracking-widest font-bold text-gold shrink-0">{apt.area}</span>
+                    <span className="break-all">{apt.email}</span>
+                    <span className="shrink-0">{apt.whatsapp}</span>
                   </div>
                 </div>
 

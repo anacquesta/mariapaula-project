@@ -176,33 +176,35 @@ const Disponibilidade = () => {
                 {blocks.map((block) => (
                   <div 
                     key={block.id}
-                    className="bg-white border border-foreground/5 p-5 flex items-center justify-between hover:border-gold/20 transition-all group shadow-sm"
+                    className="bg-white border border-foreground/5 p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-gold/20 transition-all group shadow-sm"
                   >
-                    <div className="flex items-center gap-6">
-                      <div className="flex flex-col">
-                        <span className="label-caps text-[10px] text-foreground/40">DE</span>
-                        <span className="serif text-lg text-charcoal">
-                          {format(new Date(block.start_date), "dd 'de' MMM", { locale: ptBR })}
-                        </span>
-                      </div>
-                      <ArrowRight size={14} className="text-gold/50" />
-                      <div className="flex flex-col">
-                        <span className="label-caps text-[10px] text-foreground/40">ATÉ</span>
-                        <span className="serif text-lg text-charcoal">
-                          {format(new Date(block.end_date), "dd 'de' MMM", { locale: ptBR })}
-                        </span>
+                    <div className="flex flex-wrap items-center gap-4 sm:gap-6 flex-1 min-w-0">
+                      <div className="flex items-center gap-4">
+                        <div className="flex flex-col">
+                          <span className="label-caps text-[10px] text-foreground/40">DE</span>
+                          <span className="serif text-base sm:text-lg text-charcoal">
+                            {format(new Date(block.start_date), "dd 'de' MMM", { locale: ptBR })}
+                          </span>
+                        </div>
+                        <ArrowRight size={14} className="text-gold/50 shrink-0" />
+                        <div className="flex flex-col">
+                          <span className="label-caps text-[10px] text-foreground/40">ATÉ</span>
+                          <span className="serif text-base sm:text-lg text-charcoal">
+                            {format(new Date(block.end_date), "dd 'de' MMM", { locale: ptBR })}
+                          </span>
+                        </div>
                       </div>
                       {block.reason && (
-                        <div className="ml-4 pl-4 border-l border-foreground/10">
-                          <span className="text-[10px] label-caps text-foreground/40 block mb-1">MOTIVO</span>
-                          <span className="text-xs text-foreground/60 italic">"{block.reason}"</span>
+                        <div className="sm:ml-4 sm:pl-4 sm:border-l border-foreground/10 min-w-0">
+                          <span className="text-[10px] label-caps text-foreground/40 block mb-0.5 sm:mb-1">MOTIVO</span>
+                          <span className="text-xs text-foreground/60 italic block truncate sm:normal-case">"{block.reason}"</span>
                         </div>
                       )}
                     </div>
 
                     <button 
                       onClick={() => deleteBlock(block.id)}
-                      className="p-2 text-foreground/20 hover:text-red-500 hover:bg-red-50 rounded-full transition-all opacity-0 group-hover:opacity-100"
+                      className="self-end sm:self-auto p-2 text-foreground/20 hover:text-red-500 hover:bg-red-50 rounded-full transition-all opacity-100 sm:opacity-0 sm:group-hover:opacity-100"
                       title="Remover bloqueio"
                     >
                       <Trash2 size={18} />
