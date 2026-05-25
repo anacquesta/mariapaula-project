@@ -8,9 +8,9 @@ const Hero = () => {
         <span className="label-caps text-foreground/50">Edição 01 — Direito Digital · 2026</span>
       </div>
 
-      <div className="container grid grid-cols-12 gap-6 md:gap-10 items-end">
+      <div className="container grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-end">
         {/* LEFT — typography */}
-        <div className="col-span-12 lg:col-span-7 relative flex flex-col items-center text-center lg:items-start lg:text-left">
+        <div className="col-span-1 lg:col-span-7 relative flex flex-col items-center text-center lg:items-start lg:text-left">
           <div className="flex items-center justify-start gap-3 mb-8 w-full">
             <span className="h-px w-12 bg-olive" />
             <span className="label-caps text-olive">Advocacia · Estratégia</span>
@@ -43,7 +43,7 @@ const Hero = () => {
         </div>
 
         {/* RIGHT — editorial visual */}
-        <div className="col-span-12 lg:col-span-5 relative mt-16 lg:mt-0">
+        <div className="col-span-1 lg:col-span-5 relative mt-16 lg:mt-0">
           <div className="relative aspect-[3/4] w-full max-w-md mx-auto">
             {/* Olive block behind */}
             <div className="absolute -top-6 -left-6 w-2/3 h-2/3 bg-olive z-0" />

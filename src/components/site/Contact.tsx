@@ -45,8 +45,8 @@ const Contact = () => {
 
   return (
     <section id="contato" className="py-12 md:py-20 bg-olive text-offwhite">
-      <div ref={ref} className="container reveal grid grid-cols-12 gap-y-12 md:gap-16">
-        <div className="col-span-12 md:col-span-5 flex flex-col items-center text-center md:items-start md:text-left">
+      <div ref={ref} className="container reveal grid grid-cols-1 md:grid-cols-12 gap-y-12 md:gap-16">
+        <div className="col-span-1 md:col-span-5 flex flex-col items-center text-center md:items-start md:text-left">
           <div className="flex items-center justify-start gap-3 mb-6 w-full">
             <span className="h-px w-12 bg-offwhite" />
             <span className="label-caps text-offwhite">Contato</span>
@@ -75,7 +75,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="col-span-12 md:col-span-7 space-y-7 flex flex-col items-center md:items-start w-full" noValidate>
+        <form onSubmit={handleSubmit} className="col-span-1 md:col-span-7 space-y-7 flex flex-col items-center md:items-start w-full" noValidate>
           <div className="grid md:grid-cols-2 gap-7">
             <div>
               <label className="label-caps text-offwhite/60 block w-full text-center md:text-left">Nome</label>
