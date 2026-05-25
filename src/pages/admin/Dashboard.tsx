@@ -4,11 +4,8 @@ import AdminLayout from "@/components/admin/AdminLayout";
 import { 
   CheckCircle2, 
   XCircle, 
-  Clock, 
   MessageSquare, 
-  Calendar as CalendarIcon,
-  Search,
-  Filter
+  Calendar as CalendarIcon
 } from "lucide-react";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";

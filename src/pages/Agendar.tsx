@@ -195,7 +195,7 @@ const Agendar = () => {
     "w-full bg-transparent border-b border-foreground/25 focus:border-olive outline-none py-3 placeholder:text-foreground/40 transition-colors";
 
   return (
-    <main className="bg-background text-foreground min-h-screen">
+    <main className="bg-background text-foreground min-h-screen overflow-x-hidden">
       <Navbar />
 
       <section className="pt-36 pb-16">
