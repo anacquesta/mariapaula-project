@@ -40,6 +40,7 @@ const Disponibilidade = () => {
   const fetchBlocks = async () => {
     setLoading(true);
     const { data, error } = await supabase
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .from("blocked_dates" as any)
       .select("*")
       .order("start_date", { ascending: true });
@@ -47,6 +48,7 @@ const Disponibilidade = () => {
     if (error) {
       toast.error("Erro ao carregar bloqueios");
     } else {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       setBlocks((data as any) || []);
     }
     setLoading(false);
@@ -58,6 +60,7 @@ const Disponibilidade = () => {
 
     setIsSubmitting(true);
     const { error } = await supabase
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .from("blocked_dates" as any)
       .insert([
         { 
@@ -81,6 +84,7 @@ const Disponibilidade = () => {
 
   const deleteBlock = async (id: string) => {
     const { error } = await supabase
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .from("blocked_dates" as any)
       .delete()
       .eq("id", id);

@@ -22,8 +22,9 @@ const RecuperarSenha = () => {
       if (error) throw error;
 
       toast.success("Link de recuperação enviado para o seu e-mail");
-    } catch (error: any) {
-      toast.error(error.message || "Erro ao solicitar recuperação");
+    } catch (error: unknown) {
+      const message = error instanceof Error ? error.message : "Erro ao solicitar recuperação";
+      toast.error(message);
     } finally {
       setLoading(false);
     }

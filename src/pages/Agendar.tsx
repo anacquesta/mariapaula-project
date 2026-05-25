@@ -8,6 +8,14 @@ import FloatingWhatsApp from "@/components/site/FloatingWhatsApp";
 
 const HOURS = [9, 10, 11, 14, 15, 16, 17];
 
+// blocked_dates is not yet in the Supabase generated types — using local interface
+interface BlockedDateEntry {
+  id: string;
+  start_date: string;
+  end_date: string;
+  reason?: string;
+}
+
 const schema = z.object({
   name: z.string().trim().min(2).max(100),
   email: z.string().trim().email().max(255),
@@ -56,7 +64,7 @@ const Agendar = () => {
   const [selectedDay, setSelectedDay] = useState<Date>(days[0]);
   const [selectedHour, setSelectedHour] = useState<number | null>(null);
   const [taken, setTaken] = useState<Set<string>>(new Set());
-  const [blockedDates, setBlockedDates] = useState<any[]>([]);
+  const [blockedDates, setBlockedDates] = useState<BlockedDateEntry[]>([]);
   const [loadingSlots, setLoadingSlots] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -75,6 +83,7 @@ const Agendar = () => {
 
     // Fetch blocked dates
     const { data: blockedData } = await supabase
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .from("blocked_dates" as any)
       .select("*")
       .gte("end_date", from.toISOString());
@@ -84,6 +93,7 @@ const Agendar = () => {
     }
     
     if (blockedData) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       setBlockedDates(blockedData as any);
     }
 
@@ -151,6 +161,7 @@ const Agendar = () => {
 
     // Verificação de última hora: o horário foi bloqueado enquanto o cliente estava na página?
     const { data: blockedNow } = await supabase
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .from("blocked_dates" as any)
       .select("id")
       .lte("start_date", slotIso)

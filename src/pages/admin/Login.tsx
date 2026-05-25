@@ -25,8 +25,9 @@ const Login = () => {
 
       toast.success("Login realizado com sucesso");
       navigate("/admin");
-    } catch (error: any) {
-      toast.error(error.message || "Erro ao realizar login");
+    } catch (error: unknown) {
+      const message = error instanceof Error ? error.message : "Erro ao realizar login";
+      toast.error(message);
     } finally {
       setLoading(false);
     }
