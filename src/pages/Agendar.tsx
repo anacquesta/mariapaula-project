@@ -216,7 +216,7 @@ const Agendar = () => {
       <section className="pb-24">
         <div className="container grid grid-cols-12 gap-10 md:gap-16">
           {/* Calendar */}
-          <div className="col-span-12 md:col-span-7">
+          <div className="col-span-12 md:col-span-7 min-w-0">
             <div className="label-caps text-foreground/50 mb-4">1. Selecione o dia</div>
             <div className="flex gap-3 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide md:flex-wrap md:overflow-visible">
               {days.map((d) => {
@@ -273,7 +273,7 @@ const Agendar = () => {
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="col-span-12 md:col-span-5 space-y-6" noValidate>
+          <form onSubmit={handleSubmit} className="col-span-12 md:col-span-5 space-y-6 min-w-0" noValidate>
             <div className="label-caps text-foreground/50 mb-2">3. Informe seus dados</div>
 
             <div className="border border-foreground/15 p-5 bg-foreground/[0.02]">
